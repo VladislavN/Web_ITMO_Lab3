@@ -52,8 +52,8 @@ window.onload=function(){
     img.src='test.jpg';
     function run(){
         var ctx=document.getElementById('cnv').getContext('2d');
-        cnv.width = 300;
-        cnv.height = 150;
+        cnv.width = 600;
+        cnv.height = 300;
 
         ctx.drawImage(img, 0, 0, cnv.width, cnv.height);
         
@@ -80,10 +80,8 @@ window.onload=function(){
         xhr.send();
         var jsonResponse = xhr.responseText;
         jsonResponse = JSON.parse(jsonResponse);
-        alert(jsonResponse["quoteText"]);
         
-
-        var text = "То что не убивает делает наc сильнее, даже изнасилование!";        
+        var text = jsonResponse["quoteText"];        
         var marginTop = counterLine(ctx, text, marginLeft, maxWidth, lineHeight, cnv.height);
         wrapText(ctx, text, marginLeft, marginTop, maxWidth, lineHeight);}
 ;}
